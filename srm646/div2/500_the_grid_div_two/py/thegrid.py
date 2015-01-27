@@ -53,7 +53,20 @@ class TheGrid(object):
 
 if __name__ == '__main__':
     grid = TheGrid()
-    print grid.find((1, 1, 1, 1), (-2, -1, 0, 1), 4)
-    print grid.find((-1, 0, 0, 1), (0, -1, 1, 0), 9)
-    print grid.find((1, 0, 0, -1, -1, -2, -2, -3, -3, -4, -4), (0, -1, 1, -2, 2, -3, 3, -4, 4, -5, 5), 47)
-    print grid.find((), (), 1000)
+
+    from timer import Timer
+    with Timer() as t:
+        print grid.find((1, 1, 1, 1), (-2, -1, 0, 1), 4)
+    print t.interval
+
+    with Timer() as t:
+        print grid.find((-1, 0, 0, 1), (0, -1, 1, 0), 9)
+    print t.interval
+
+    with Timer() as t:
+        print grid.find((1, 0, 0, -1, -1, -2, -2, -3, -3, -4, -4), (0, -1, 1, -2, 2, -3, 3, -4, 4, -5, 5), 47)
+    print t.interval
+
+    with Timer() as t:
+        print grid.find((), (), 1000)
+    print t.interval
