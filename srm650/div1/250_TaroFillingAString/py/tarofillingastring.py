@@ -65,7 +65,7 @@ class TaroFillingAStringDiv1(object):
 
         print time.time() - t0
         ugliness = dict(ugliness)
-        return ugliness[min(ugliness)]
+        return ugliness[min(ugliness)] % 1000000007
 
 
 def main():
